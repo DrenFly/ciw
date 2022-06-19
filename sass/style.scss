@@ -1,0 +1,1324 @@
+@import "config";
+@import "menu";
+@import "contact";
+
+
+
+html {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0px;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 500;
+}
+
+
+.main-nav {
+    position: fixed;
+    overflow: hidden;
+    top: 0%;
+    width: 100%;
+    
+    background-color: rgba($color1, $alpha: 0.9);
+    color: $color2; 
+    @include easeOut;   
+    
+    & ul {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1rem;
+        margin: 0px;
+        
+        
+    }
+
+    & .mainNav-item {
+
+        @include mediaSm {
+            visibility: hidden;
+        }
+        
+        @include mediaMd {
+            visibility: hidden;
+        }
+
+        @include mediaML {
+            visibility: hidden;
+            
+        }
+
+        @include mediaLg {
+            justify-content: left;
+            
+        }
+        
+        a {
+            text-decoration: none;
+            color: #eeeeee;
+            text-transform: uppercase;
+            @include easeOut;
+            
+            &:hover {
+                color:$color2;
+            }
+        }
+    }
+
+    .siteicon {
+        max-width: 2.5rem;
+        
+    }
+}
+
+
+.container {
+    margin: auto;
+    overflow: auto;
+    max-width: 1920px;
+    
+    
+    
+
+    & .main-header {
+        display:flex;
+        flex-direction: column;
+        height: 70vh;
+        padding-top:3rem;
+        justify-content: center;
+        color: #eeeeee;
+        background-color: rgba( #000000, 0.5);
+        
+
+        h1 {
+            font-size: 3rem;
+            line-height: 4rem;
+            padding-left: 3rem;
+
+            .letCol {
+                color: $color2;
+            }
+
+            @include mediaSm {
+                font-size: 2rem;
+                text-align: center;
+                padding: 0;
+            }
+        }
+
+        h2 {
+            padding-left: 3rem;
+
+            @include mediaSm {
+                text-align: center;
+                padding: 0;
+            }
+        }
+
+
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url("../img/cafe_indulgence-1030x687.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 0.8;
+            z-index: -1;
+        }        
+    }
+
+    
+}
+
+
+.about {
+    background-color: $color1;
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+    color: #eeeeee;
+
+    @include mediaML {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+        padding: 2rem;
+    }
+
+    @include mediaMd {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+        padding: 2rem;
+    }
+
+    @include mediaSm {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto auto;
+        padding: 1rem;
+    }
+
+    .aboutpic {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+        max-height: 25rem;
+        max-width: 26rem;
+        align-self: center;
+
+        @include mediaML {
+            height: 100%;
+            grid-column: 3 / span 2;
+            align-self: center;
+            
+        }
+
+        @include mediaMd {
+            display: none;
+            
+        }
+
+        @include mediaSm {
+            display: none;
+            
+        }
+    }
+    
+    .aboutus {
+        grid-column: 1 / span 2;
+
+        
+    
+
+        & p {
+            padding-right:3rem;
+            margin-right: 3rem;
+            text-align: justify;
+
+            @include mediaML {
+                padding-right:1rem;
+                margin-right: 1rem;
+            }
+
+            @include mediaMd {
+                padding-right:0rem;
+                margin-right: 0rem;
+                
+            }
+
+            @include mediaSm {
+                padding-right:0rem;
+                margin-right: 0rem;
+                
+            }
+        }
+
+        @include mediaMd {
+            padding-right:0rem;
+            margin-right: 0rem;
+            grid-column: 1 / span 4;
+        }
+
+        @include mediaSm {
+            padding-right:0rem;
+            margin-right: 0rem;
+            grid-column: 1 / span 4;
+        }
+    }
+
+    h1 {
+        grid-column: 1 / span 2;
+        align-items: center;
+
+        @include mediaMd {
+            grid-column: 1 / span 4;
+            align-items: center;
+        }
+
+        @include mediaSm {
+            grid-column: 1 / span 4;
+            align-items: center;
+        }
+    }
+
+    p {
+        padding:10px 0;
+    }
+
+    img {
+        width: 100%;
+           
+    }
+
+    button {
+        font-size: 1.3rem;
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: $color2;
+        color: $color1;
+        border: 0;
+        transition: all 0.3s ease-in-out;
+
+        & a {
+            text-decoration: none;
+            color: $color1;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                
+                color: lighten($color2, 7);
+                
+            }
+        }
+
+        &:hover {
+            background-color: lighten($color1, 7);
+            color: lighten($color2, 7);
+            border: 0;
+        }
+    }    
+
+}
+
+.main-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto min-content min-content;
+    background-color: #eeeeee;
+    align-items: center;
+    text-align: center;
+    color: $color1;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    @include mediaML {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto min-content min-content min-content;
+    }
+
+    @include mediaMd {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto min-content min-content min-content;
+    }
+
+    @include mediaSm {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto repeat(6, auto);
+    }
+
+    h2 {
+        grid-column: 1 /span 3;
+        grid-row: 1;
+        text-align: center;
+
+        @include mediaML {
+            grid-column: 1 /span 2;
+            grid-row: 1;
+            text-align: center;
+        }
+
+        @include mediaMd {
+            grid-column: 1 /span 2;
+            grid-row: 1;
+            text-align: center;
+        }
+
+        @include mediaSm {
+            grid-column: 1;
+            grid-row: 1;
+            text-align: center;
+        }
+    }
+
+    & .box {
+        font-size: 1rem;
+        padding: 2rem;
+        display: grid;
+        grid-template-rows: 100px 50px 150px;
+        align-items: center;
+    }
+}
+
+i {
+    z-index: 1;
+}
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px repeat(8, auto);
+    background-color: $color1;
+    
+
+    & h1 {
+        grid-column: 1 / span 3;
+        color: $color2;
+        align-items: center;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    a {
+        width: 100%; 
+        height: 100%; 
+    }
+
+    .gallimg {
+        width: 100%; 
+        height: 100%;
+        overflow: auto;
+        transition: all 300ms ease-in-out;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+
+    .gallimg1 {
+        grid-column: 1;
+        grid-row: 2 /span 2;
+    }
+
+    .gallimg2 {
+        grid-column: 2;
+        grid-row: 2 /span 2;
+    }
+
+    .gallimg3 {
+        grid-column: 3;
+        grid-row: 2 /span 2;
+    }
+
+    .gallimg4 {
+        grid-column: 1;
+        grid-row: 4 /span 2;
+    }
+
+    .gallimg5 {
+        grid-column: 2;
+        grid-row: 4 / span 2;
+    }
+
+    .gallimg6 {
+        grid-column: 3;
+        grid-row: 4 /span 2;
+    }
+
+    .gallimg7 {
+        grid-column: 1;
+        grid-row: 6 /span 2;
+    }
+
+    .gallimg8 {
+        grid-column: 2;
+        grid-row: 6 /span 2;
+    }
+
+    .gallimg9 {
+        grid-column: 3;
+        grid-row: 6 /span 2;
+    }
+
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 1000ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 10;
+    
+    
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+    
+    
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: $color2;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 2rem;
+    z-index: 10;
+    text-align: center;
+
+    @include mediaMd {
+        font-size: 1.5rem;
+        padding-top: 1rem;
+    }
+
+    @include mediaSm {
+        font-size: 1rem;
+        text-align: center;
+        padding-top: 1rem;
+    }
+    
+  }
+
+.popup {
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    transition: all 2s ease-in-out;
+    z-index: 10;
+    
+    @include mediaMd {
+        padding: 0px;
+        
+    }
+    
+    @include mediaSm {
+        padding: 0px;
+        background: rgba(0, 0, 0, 0.9);
+    }
+    
+  }
+
+.popup__img {
+    object-fit: contain;
+}
+
+.popup .content .popup__img {    
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    overflow: auto;
+    
+}  
+
+.content {    
+    object-fit: contain;
+    height: 80vh;
+    width: 95vw;
+
+    @include mediaMd {
+        width: 100vw;
+    }
+
+    @include mediaSm {
+        width: 100vw;
+    }
+    
+}
+
+.popup .close {
+    position: absolute;
+    top: 10px;
+    right: -20px;
+    height: auto;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    transition: color 500ms ease-in-out;
+
+    @include mediaMd {
+        font-size: 2rem;
+        top: 5px;
+        right: -10px;
+    }
+
+    @include mediaSm {
+        font-size: 1.5rem;
+        top: 5px;
+        right: -10px;
+    }
+  }
+
+  .popup .last {
+    position: absolute;
+    top: 10px;
+    right: -80px;
+    height: auto;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    transition: color 500ms ease-in-out;
+
+    @include mediaMd {
+        font-size: 2rem;
+        top: 5px;
+        right: -40px;
+    }
+
+    @include mediaSm {
+        font-size: 1.5rem;
+        top: 5px;
+        right: -40px;
+    }
+  }
+
+  .popup .next {
+    position: absolute;
+    top: 10px;
+    right: -130px;
+    height: auto;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    transition: color 500ms ease-in-out;
+
+    @include mediaMd {
+        font-size: 2rem;
+        top: 5px;
+        right: -65px;
+    }
+
+    @include mediaSm {
+        font-size: 1.5rem;
+        top: 5px;
+        right: -65px;
+    }
+  }
+
+  .close:hover, .last:hover, .next:hover {
+      color: $color2;
+      
+  }
+
+  .socialLead {
+      color: $color2;
+      grid-row: 9;
+      grid-column: 1 / span 3;
+      align-items: center;
+      text-align: center;
+
+      & img {
+          width: auto;
+          height: 50px;
+          padding-bottom: 1rem;
+      }
+  }
+
+
+.testimonials {
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(9, auto);
+    background-color: rgba(255, 255, 255, 0.7);
+
+    @include mediaML {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(9, auto);
+    }
+    
+    @include mediaMd {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(9, auto);
+    }
+
+    @include mediaSm {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(9, auto);
+    }
+
+    .cardtest {
+        background-color: rgba(238, 238, 238, 0.9);
+        
+
+        @include mediaML {
+            padding: 2rem;
+        }
+
+        @include mediaMd {
+            padding: 2rem;
+        }
+
+        @include mediaSm {
+            padding: 2rem;
+        }  
+    }
+
+    .quote1 {
+        color: #000000;
+        grid-row: 1;
+        grid-column: 1;
+        font-size: 1.5rem;
+        align-self: center;
+        margin: 0px;
+        padding: 2rem;
+        background-image: url("../img/IMG_2566.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        opacity: 0.8;
+        
+
+        @include mediaMd {
+            grid-row: 1;
+            grid-column: 1;
+        }
+
+        @include mediaSm {
+            grid-row: 1;
+            grid-column: 1;
+        }
+
+        @include mediaMd {
+            grid-row: 1;
+            grid-column: 1;
+        }
+        
+    }
+
+    .quote2 {
+        color: #000000;
+        grid-row: 3;
+        grid-column: 2 / span 2;
+        font-size: 1.5rem;
+        align-self: center;
+        margin: 0;
+        padding: 2rem;
+        background-image: url("../img/IMG_2566.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        opacity: 0.8;
+
+        @include mediaML {
+            grid-row: 3;
+            grid-column: 1;
+        }
+
+        @include mediaMd {
+            grid-row: 3;
+            grid-column: 1;
+        }
+
+        @include mediaSm {
+            grid-row: 3;
+            grid-column: 1;
+        }
+
+        .test1 {
+            text-align: center;
+            font-size: 2rem;
+            grid-row: 1;
+            grid-column: 1 /span 2;
+            margin: 0;
+            padding: 2rem;
+        }
+
+        
+    }
+
+    .cardtest1 {
+        grid-row: 2 / span 2;
+        grid-column: 1;
+        padding: 3rem;
+        background-color: lighten($color3, 5);
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        padding: 1rem;
+        color: #eeeeee;
+        
+
+        & .sandHead {
+            font-size: 1.5rem;
+
+            @include mediaSm {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+        }
+
+        & .sandItem {
+            display: flex;
+            justify-content: space-between;
+
+            @include mediaSm {
+                flex-direction: column;
+                border-bottom: 2px $color2 solid;
+                
+                & h3 {
+                    margin: 5px;
+                    padding: 5px;
+                }
+            }
+            
+        }
+
+        @include mediaML {
+            padding: 1rem;
+            grid-row: 5;
+            grid-column: 1;
+        }
+
+        @include mediaMd {
+            padding: 1rem;
+            grid-row: 5;
+            grid-column: 1;
+        }
+
+        @include mediaSm {
+            padding: 1rem;
+            grid-row: 5;
+            grid-column: 1;
+        }
+    }
+
+    .cardtest2 {
+        grid-row: 1 / span 2;
+        grid-column: 2 / span 2;
+        background-color: lighten($color2, 9);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        padding: 2rem;
+
+        @include mediaML {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+        }
+
+        @include mediaMd {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+        }
+
+        @include mediaSm {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto;
+            text-align: center;
+        }
+
+        & .breakHead {
+            grid-row: 1;
+            grid-column: 1 /span 2;
+            font-size: 2rem;
+            text-align: center;
+
+            @include mediaSm {
+                grid-row: 1;
+                grid-column: 1;
+            }
+        }
+
+        & .break1, .break2 {
+
+            & .breakItem {
+                display: grid;
+                grid-template-columns: 70% 30%;
+                grid-template-rows: auto auto;
+                
+
+                & h3 {
+                    grid-column: 1;
+                    grid-row: 1;
+                    margin: 0.5rem;
+                }
+
+                & p {
+                    grid-column: 1;
+                    grid-row: 2;
+                    margin: 0.5rem;
+                }
+
+                & h2 {
+                    grid-column: 2;
+                    grid-row: 1 / span 2;
+                }
+            }
+        }
+
+        @include mediaML {
+            grid-row: 2;
+            grid-column: 1;
+        }
+
+        @include mediaMd {
+            grid-row: 2;
+            grid-column: 1;
+        }
+
+        @include mediaSm {
+            grid-row: 2;
+            grid-column: 1;
+        }
+    }
+
+    .cardtest3 {
+        grid-row: 4;
+        grid-column: 1 / span 3;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        padding: 2rem;
+
+        @include mediaSm {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto;
+            text-align: center;
+            border-bottom: 2px $color2 solid;
+        }      
+        
+        @include mediaMd {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto;
+            text-align: center;
+            border-bottom: 2px $color2 solid;
+        } 
+
+        & .lunch1, .lunch2 {
+
+            & .lunchItem {
+                display: grid;
+                grid-template-columns: 70% 30%;
+                grid-template-rows: auto auto;
+                @include mediaSm {
+                    
+                    text-align: center;
+                    border-bottom: 2px $color2 solid;
+                }
+                
+
+                & h3 {
+                    grid-column: 1;
+                    grid-row: 1;
+                    margin: 0.5rem;
+                }
+
+                & p {
+                    grid-column: 1;
+                    grid-row: 2;
+                    margin: 0.5rem;
+                }
+
+                & h2 {
+                    grid-column: 2;
+                    grid-row: 1 / span 2;
+                }
+            }
+        }
+
+        @include mediaML {
+            grid-row: 4;
+            grid-column: 1;
+        }
+
+        @include mediaMd {
+            grid-row: 4;
+            grid-column: 1;
+        }
+
+        @include mediaSm {
+            grid-row: 4;
+            grid-column: 1;
+        }
+    }
+
+    .cardtest4 {
+        grid-row: 6;
+        grid-column: 1 / span 3;
+        padding: 3rem;
+        background-color: lighten($color2, 5);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        padding: 2rem;
+
+        @include mediaSm {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto;
+            text-align: center;
+        }
+
+        @include mediaMd {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto;
+            text-align: center;
+        }
+
+        @include mediaML {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto;
+            text-align: center;
+        }
+
+        .lunch1 {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .lunch2 {
+            grid-column: 2;
+            grid-row: 1;
+
+            @include mediaMd {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            @include mediaSm {
+                grid-column: 1;
+                grid-row: 2;
+            }
+        }
+
+        & .lunch1, .lunch2 {
+
+            & .lunchItem {
+                display: grid;
+                grid-template-columns: 70% 30%;
+                grid-template-rows: auto auto;
+                
+                
+
+                & h3 {
+                    grid-column: 1;
+                    grid-row: 1;
+                    margin: 0.5rem;
+                }
+
+                & p {
+                    grid-column: 1;
+                    grid-row: 2;
+                    margin: 0.5rem;
+                }
+
+                & h2 {
+                    grid-column: 2;
+                    grid-row: 1 / span 2;
+                }
+            }
+        }
+
+        @include mediaMd {
+            padding: 1rem;
+            grid-row: 6;
+            grid-column: 1;
+        }
+
+        @include mediaSm {
+            padding: 1rem;
+            grid-row: 6;
+            grid-column: 1;
+        }
+
+        & h2 {
+            grid-row: 3;
+            grid-column: 1 / span 2;
+            text-align: center;
+        }
+    }
+
+    .cardtest5 {
+        grid-row: 7;
+        grid-column: 1 / span 3;
+        background-color: transparent;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: min-content auto auto;
+        
+        
+        &::after {
+            content: "";
+            position: absolute;
+            overflow: hidden;
+            background-image: url("../img/IMG_2566.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+            opacity: 0.9;
+            left: 0;
+            width: 100%; 
+            height: 200%;        
+            z-index: -1;
+        }
+
+        @include mediaSm {
+            grid-template-columns: 1fr;
+            grid-template-rows: min-content auto auto;
+            text-align: center;
+        }
+
+        @include mediaMd {
+            grid-template-columns: 1fr;
+            grid-template-rows: min-content auto auto;
+            text-align: center;
+        }
+
+        @include mediaML {
+            grid-template-columns: 1fr;
+            grid-template-rows: min-content auto auto;
+            text-align: center;
+            font-size: 1;
+        }
+
+        & .drinkHead {
+            font-size: 3rem;
+            grid-row: 1;
+            grid-column: 1 /span 2;
+            text-align: center;
+            
+            padding-bottom: 2rem;
+
+            @include mediaSm {
+                grid-row: 1;
+                grid-column: 1;
+            }
+
+            @include mediaMd {
+                grid-row: 1;
+                grid-column: 1;
+            }
+
+            @include mediaML {
+                font-size: 2rem;
+            }
+            
+        }
+
+        & .drink1, .drink2 {
+
+            & .drinkItem {
+                display: grid;
+                grid-template-columns: 70% 30%;
+                grid-template-rows: auto;
+                justify-content: center;
+                align-items: center;
+
+                @include mediaSm {
+                    border-bottom: 2px $color2 solid;
+                }
+                
+
+                & h3 {
+                    grid-column: 1;
+                    grid-row: 1;
+                    margin: 0.5rem;
+                    padding-right: 1rem;
+                }                
+
+                & h2 {
+                    grid-column: 2;
+                    grid-row: 1;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        @include mediaML {
+            padding: 1rem;
+            grid-row: 7;
+            grid-column: 1;
+        }
+
+        @include mediaMd {
+            padding: 1rem;
+            grid-row: 7;
+            grid-column: 1;
+        }
+
+        @include mediaSm {
+            padding: 1rem;
+            grid-row: 7;
+            grid-column: 1;
+        }
+    }
+
+    .testclose {
+        grid-row: 5;
+        grid-column: 1 / span 3;
+        padding: 3rem;
+        text-align: center;
+        background-image: url("../img/IMG_2566.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        opacity: 0.8;
+
+        @include mediaML {
+            grid-row: 8;            
+        }
+
+        @include mediaMd {
+            grid-row: 8;            
+        }
+
+        @include mediaSm {
+            grid-row: 8;            
+        }
+    }
+}
+
+
+.timeline {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto repeat(6, 1fr);
+    
+    background-color: $color1;
+    
+
+
+    & .tcard {
+        padding: 2rem;
+        margin: 1rem;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: #eeeeee;
+        
+
+        & .date-icon {
+            font-size: 2rem;
+            color: $color2;
+        }
+
+        
+    }
+
+    & .tcard1 {
+        grid-row: 2;
+        grid-column: 1;
+        text-align: end;
+    }
+
+    & .tcard2 {
+        grid-row: 3;
+        grid-column: 2;
+    }
+
+    & .tcard3 {
+        grid-row: 4;
+        grid-column: 1;
+        text-align: end;
+    }
+
+    & .tcard4 {
+        grid-row: 5;
+        grid-column: 2;
+    }
+
+    & .tcard5 {
+        grid-row: 6;
+        grid-column: 1;
+        text-align: end;
+    }
+
+    & .tcard6 {
+        grid-row: 7;
+        grid-column: span 2;
+        text-align: center;
+    }
+        
+}
+
+
+
+.timeline-heading {
+    grid-column: span 2;
+    text-align: center;
+    align-items: center;
+    padding: 3rem;
+    color: $color2;
+}
+
+//Counter Styles
+.counters {
+    padding: 3rem;
+    background-color: $color1;
+}
+
+.countcon {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    text-align: center;
+    padding: 4rem 0;
+    color: #eeeeee;
+
+    @include mediaML {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mediaMd {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mediaSm {
+        grid-template-columns: 1fr;
+    }
+
+    & .counter {
+        font-size: 3rem;
+    }
+
+    & h3 {
+        font-size: 1.5rem;
+
+        @include mediaMd {
+            font-size: 1rem;
+        }
+    }
+
+}
+
+footer {
+    text-align: center;
+    background-color: $color1;
+    color: #eeeeee;
+    position: relative;
+    height: auto;
+    padding: 2rem 0;
+
+    & a {
+        color: #eeeeee;
+        text-decoration: none;
+        @include easeOut;
+
+        &:hover {
+            color: $color2;
+        }
+    }
+
+    & .socLead {
+        padding-top: 2rem;
+        border-top: 2px $color2 solid;
+    }
+
+    & .social {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        justify-content: space-around;
+        padding: 2rem;
+        
+        & .socItem {
+
+            & a {
+              color: $color2;
+              
+              &:hover {
+                  color: lighten($color2, 15);
+              }
+            }
+            
+        }
+    }
+}

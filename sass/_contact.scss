@@ -1,0 +1,203 @@
+#contact {
+    background-color: #ffffff;
+
+    
+}
+
+.concontainer {
+    width: auto;
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    text-align: center;
+    justify-content: center;
+
+    @include mediaSm {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        
+    }
+
+    @include mediaMd {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+    }
+
+    @include mediaML {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+    }
+}
+
+.map {
+    grid-row: 2;
+    grid-column: 2;
+    width: 100%;
+    height: 100%;
+
+    @include mediaSm {
+        grid-row: 4;
+        grid-column: 1;
+    }
+
+    @include mediaMd {
+        grid-row: 4;
+        grid-column: 1;
+    }
+
+    @include mediaML {
+        grid-row: 4;
+        grid-column: 1;
+    }
+    
+}
+
+.contpic {
+    width: 100%;
+    height: 100%;
+}
+
+.contacttop {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5;
+    padding: 2rem;
+    background-color: $color3;
+    color: #ffffff;
+    grid-row: 1;
+    grid-column: 1;
+    
+    
+    }
+
+.regularform {
+    align-items: center;    
+
+    & #contactform {
+        grid-row: 2;
+        grid-column: 1;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(2, 1fr) 10vh 1fr;
+        background-color: $color3;
+        padding: 2rem;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+
+    @include mediaML {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(2, 1fr) 10vh 1fr auto;
+    }
+
+    @include mediaMd {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(2, 1fr) 10vh 1fr auto;
+    }
+
+    @include mediaSm {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(2, 1fr) 10vh 1fr auto;
+        
+    }
+    
+
+        & .forminput1 {
+            display: flex;
+            flex-direction: column;
+            grid-row: 1;
+            grid-column: 1;
+
+            @include mediaSm {
+                grid-row: 1;
+                
+            }
+            
+        }
+
+        & .forminput2 {
+            display: flex;
+            flex-direction: column;
+            grid-row: 2;
+            grid-column: 1;
+
+            @include mediaML {
+                grid-row: 2;
+            }
+        }
+
+        & .forminput3 {
+            display: flex;
+            flex-direction: column;
+            grid-row: 3;
+            grid-column: 1;
+            
+            
+        }
+
+        & #submit {
+            grid-row: 4;
+            grid-column: 1;
+            font-size: 1rem;
+            justify-self: center;
+            border: none;
+            border-radius: 0px;
+            padding: 1rem;
+            margin: 1rem;
+            background-color: $color2;
+            color: $color1;
+            @include easeOut;
+
+            &:hover {
+                background-color: lighten($color1, 7);
+                color: lighten($color2, 7);
+            }
+        }
+
+        
+
+        .nameinput {
+            border: none;
+            border-radius: 0%;
+            height: 1.5rem;
+
+            &:focus {
+                border: 2px $color2 solid;
+                border-radius: 0px;
+                
+            }
+        }
+
+        .emailinput {
+            border: none;
+            border-radius: 0%;
+            height: 1.5rem;
+
+            &:focus {
+                border: 2px $color2 solid;
+                border-radius: 0px;
+                
+            }
+        }
+
+        .message {
+            border: none;
+            border-radius: 0%;
+
+            @include mediaSm {
+                grid-row: 1;
+                padding: 0 1rem;
+            }
+            
+            
+
+            &:focus {
+                border: 2px $color2 solid;
+                border-radius: 0%;
+                
+            }
+        }
+    }
+    
+}
